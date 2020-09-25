@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+ * {
+  box-sizing: border-box;
+}
+/* ↑paddingなどの要素のサイズに影響がある記述をしても指定したサイズのまま変わらない設定　*は全ての要素に適応という意味
