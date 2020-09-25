@@ -1,3 +1,6 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  get 'messages/index'
+  root to:"messages#index" 
+  #rルートパスへのアクセスがあったらmessagesコントローラーのindexアクションが呼び出される
+  #ルートパスへのアクセスの時はHTTPメソッドを省略できる 自動でgetと判断してくれる
 end
