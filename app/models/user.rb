@@ -6,4 +6,9 @@ class User < ApplicationRecord
   
   validates :name, presence: true
   #nameの入力がされていない場合には保存されない設定
+
+  has_many :room_users
+  has_many :rooms, through: :room_users
+  #中間テーブルを使用したアソシエーション/3851
+
 end
