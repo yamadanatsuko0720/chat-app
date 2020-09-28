@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-  get 'messages/index'
+  #ユーザー機能に必要なルーティングを一気に生成している(自動生成)
   root to:"messages#index" 
   #ルートパスへのアクセスがあったらmessagesコントローラーのindexアクションが呼び出される
   #ルートパスへのアクセスの時はHTTPメソッドを省略できる 自動でgetと判断してくれる
+  resources :users, only: [:edit, :update]
 end

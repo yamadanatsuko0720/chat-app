@@ -1,3 +1,4 @@
+#共通のコントローラー
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   #deviseのメソッドでログインしていないユーザーをログイン画面に促すことができる
