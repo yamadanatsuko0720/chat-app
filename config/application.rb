@@ -13,6 +13,8 @@ module ChatApp
     config.i18n.default_locale = :ja
     config.time_zone = 'Tokyo'
     #2行を追加して日本時刻に設定/4762
+    config.action_view.field_error_proc = Proc.new { |html_tag, instance| html_tag }
+    #バリデーションエラー時にビューが崩れないように設定/4762
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
