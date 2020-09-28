@@ -4,7 +4,8 @@
     <%# 遷移先のパスはrails routesでeditのパスを確認 %>
   </div>
   <div class = create-room>
-    <a href="#">チャットを作成する</a>
+     <%= link_to "チャットを作成する", new_room_path %>
+     <%# トップページからチャット作成画面へのリンク4854 %>
   </div>
 </div>
 
@@ -15,8 +16,13 @@
     </div>
   </div>
   <div class = "room">
-    <div class = room-name>
-      <a href="#">techroom2</a>
+    <% current_user.rooms.each do |room| %>
+    <div class="room">
+      <div class="room-name">
+        <a href="#"><%= room.name %></a>
+      </div>
     </div>
-  </div>
+    <%# サイドバーにチャットルーム名が表示される %>
+    <%# ルームは複数作成できるのでeachメソッドくぉ使用してチャットルームを表示する作業を繰り替えす/4853 %>
+  <% end %>
 </div>
