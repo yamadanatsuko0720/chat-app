@@ -1,0 +1,5 @@
+#日本時刻設定のために新しく作成
+ja:
+  time:
+    formats:
+      default: "%Y/%m/%d %H:%M:%S"
