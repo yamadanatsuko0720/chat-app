@@ -11,4 +11,7 @@ class User < ApplicationRecord
   has_many :rooms, through: :room_users
   #中間テーブルを使用したアソシエーション/3851
 
+  has_many :messages
+  #4947
+
 end
