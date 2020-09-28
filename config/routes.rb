@@ -5,5 +5,8 @@ Rails.application.routes.draw do
   #ルートパスへのアクセスがあったらmessagesコントローラーのindexアクションが呼び出される
   #ルートパスへのアクセスの時はHTTPメソッドを省略できる 自動でgetと判断してくれる
   resources :users, only: [:edit, :update]
-  resources :rooms, only: [:new, :create]
+  resources :rooms, only: [:new, :create] do
+    resources :messages, only: [:index, :create]
+  end
+  #どのチャットルームのメッセージなのかを判断するためroomのルーティングにネストする/4859
 end

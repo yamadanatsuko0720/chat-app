@@ -9,20 +9,14 @@
   </div>
 </div>
 
-<div class = "rooms">
-  <div class = "room">
-    <div class = room-name>
-      <a href="#">techroom1</a>
-    </div>
-  </div>
-  <div class = "room">
-    <% current_user.rooms.each do |room| %>
+<div class="rooms">
+  <% current_user.rooms.each do |room| %>
     <div class="room">
       <div class="room-name">
-        <a href="#"><%= room.name %></a>
+        <%= link_to room.name, room_messages_path(room) %>
       </div>
     </div>
-    <%# サイドバーにチャットルーム名が表示される %>
-    <%# ルームは複数作成できるのでeachメソッドくぉ使用してチャットルームを表示する作業を繰り替えす/4853 %>
   <% end %>
+  <%# サイドバーにチャットルーム名が表示される %>
+    <%# ルームは複数作成できるのでeachメソッドくぉ使用してチャットルームを表示する作業を繰り替えす/4853 %>
 </div>
