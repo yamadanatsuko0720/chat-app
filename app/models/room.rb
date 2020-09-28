@@ -6,4 +6,6 @@ class Room < ApplicationRecord
   validates :name, presence: true
   #チャットルーム新規作成時はルーム名の入力は必ず必要なのでバリデーションをかける/4919
 
+  has_many :messages
+  #4947
 end
